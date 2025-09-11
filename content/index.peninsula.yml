@@ -1,0 +1,261 @@
+seo:
+  title:
+    Península Cross Cancún | CrossFit y Entrenamiento Funcional en Cancún (SM
+    510)
+  description:
+    Clases guiadas, comunidad y WODs variados. Horarios matutinos y vespertinos.
+    Escribe por Instagram para tu clase de prueba.
+  keywords:
+    - CrossFit Cancún
+    - entrenamiento funcional Cancún
+    - gimnasio Cancún
+    - WOD Cancún
+    - box Cancún
+    - Península Cross
+  openGraph:
+    title: Península Cross Cancún | CrossFit en Cancún
+    description:
+      Entrena con una comunidad que no te deja rendirte. Clase de prueba
+      disponible.
+    type: website
+    image: /images/og-peninsula.jpg
+  twitter:
+    card: summary_large_image
+    title: Península Cross Cancún | CrossFit en Cancún
+    description: Clases guiadas, comunidad y WODs variados.
+    image: /images/og-peninsula.jpg
+  jsonLd:
+    "@context": https://schema.org
+    "@type": HealthClub
+    name: Península Cross Cancún
+    image:
+      - /images/og-peninsula.jpg
+    address:
+      "@type": PostalAddress
+      streetAddress:
+        Av. Politécnico, esquina con Calle 105 510, C. 105 Supermanzana
+        510, Jacinto Pat, 77534 Cancún, Q.R.
+      addressLocality: Cancún
+      addressRegion: Quintana Roo
+      addressCountry: MX
+    sameAs:
+      - https://www.instagram.com/peninsulacross_/
+      - https://www.facebook.com/61577717461810
+title: Península Cross Cancún
+description:
+  Súmate a Península y entrena con quienes nunca te dejan rendirte. Centro
+  de entrenamiento funcional en SM 510, Cancún, Quintana Roo, México.
+hero:
+  links:
+    - label: Enviar DM en Instagram
+      icon: i-simple-icons-instagram
+      to: https://www.instagram.com/peninsulacross_/
+      target: _blank
+      trailing: true
+      size: xl
+      color: primary
+    - label: Cómo llegar
+      icon: i-lucide-map-pin
+      to: https://maps.app.goo.gl/hdiMCZ5GH6JLZ4eC8
+      target: _blank
+      variant: soft
+    - label: Ver en Facebook
+      icon: i-simple-icons-facebook
+      to: https://www.facebook.com/61577717461810
+      target: _blank
+      variant: subtle
+section:
+  title: Lleva tu [entrenamiento]{.text-primary} al siguiente nivel
+  description:
+    Clases guiadas para todos los niveles, enfoque en técnica segura y
+    una comunidad que te impulsa a ser constante.
+  images:
+    mobile: /images/personal_trainer.svg
+    desktop: /images/personal_trainer.svg
+  features:
+    - title: Coaching cercano
+      description:
+        Sesiones dirigidas por coach, con progresiones y correcciones de
+        técnica.
+    - title: Comunidad real
+      description: Entrena con gente que te acompaña y no te deja rendirte.
+    - title: Resultados medibles
+      description: WODs variados, fuerza y acondicionamiento para mejorar tu rendimiento.
+features:
+  title: Lo que encontrarás en [Península]{.text-primary}
+  description: Entrenamientos funcionales, progresivos y con propósito.
+  features:
+    - title: Clases para principiantes
+      description: Escala cada movimiento. Empezar es fácil y seguro.
+      icon: i-lucide-sparkles
+      ui:
+        leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
+    - title: WODs variados
+      description: Fuerza, técnica y acondicionamiento para que nunca sea monótono.
+      icon: i-lucide-dumbbell
+    - title: Acompañamiento técnico
+      description: Corrección de postura y progresiones en levantamientos y gimnásticos.
+      icon: i-lucide-activity
+    - title: Ambiente seguro
+      description: Espacio cuidado, respeto por los tiempos y niveles de cada persona.
+      icon: i-lucide-shield-check
+    - title: Comunidad
+      description: Entrena con personas que te motivan y celebran tus logros.
+      icon: i-lucide-users-round
+    - title: Merch y eventos
+      description: Playeras y actividades para la comunidad (consulta en Instagram).
+      icon: i-lucide-shirt
+steps:
+  title: ¿Cómo empezar?
+  description: Da tus primeros pasos en Península Cross.
+  items:
+    - title: 1) Escríbenos por Instagram
+      description: Mándanos DM para resolver dudas y agendar tu clase de prueba.
+      image:
+        light: /images/dark/connect.svg
+        dark: /images/dark/connect.svg
+    - title: 2) Elige tu horario
+      description: Consulta horarios y actualizaciones en historias destacadas.
+      image:
+        light: /images/dark/optimize.svg
+        dark: /images/dark/optimize.svg
+    - title: 3) Llega 10 minutos antes
+      description: Te recibimos, evaluamos tu nivel y te acompañamos en tu primer WOD.
+      image:
+        light: /images/dark/track.svg
+        dark: /images/dark/track.svg
+  # steps:
+  #   - title: 1) Escríbenos por Instagram
+  #     description: Mándanos DM para resolver dudas y agendar tu clase de prueba.
+  #     icon: i-simple-icons-instagram
+  #   - title: 2) Elige tu horario
+  #     description: Consulta horarios y actualizaciones en historias destacadas.
+  #     icon: i-lucide-calendar-clock
+  #   - title: 3) Llega 10 minutos antes
+  #     description: Te recibimos, evaluamos tu nivel y te acompañamos en tu primer WOD.
+  #     icon: i-lucide-badge-check
+pricing:
+  title: Membresías
+  description: Elige tu plan. Escríbenos por Instagram si tienes dudas.
+  plans:
+    - title: Clase de prueba
+      price: Gratis
+      description: Conoce el box y la comunidad. Aplica para nuevos miembros.
+      features:
+        - Inducción básica
+        - Acompañamiento del coach
+      button:
+        label: Agendar por Instagram
+        to: https://www.instagram.com/peninsulacross_/
+        target: _blank
+    - title: Mensual
+      price: 950 MXN
+      description: Membresía de 1 mes.
+      features:
+        - Acceso a clases grupales
+        - Correcciones de técnica
+        - Comunidad y eventos
+      button:
+        label: Pedir precios
+        to: https://www.instagram.com/peninsulacross_/
+        target: _blank
+    - title: 3 meses (pronto pago)
+      price: 2,600 MXN
+      description: Paga por adelantado y ahorra.
+      features:
+        - Acceso a clases grupales
+        - Seguimiento del coach
+        - Comunidad y eventos
+      button:
+        label: Solicitar info
+        to: https://www.instagram.com/peninsulacross_/
+        target: _blank
+testimonials:
+  title: Lo que dice la comunidad
+  description: Historias reales de constancia y progreso.
+  items:
+    - quote:
+        Llegué sin experiencia y me sentí acompañada desde el primer día. La comunidad
+        me mantiene constante.
+      user:
+        name: Kenia Espinoza
+        description: Miembro desde hace 1 año
+        target: _blank
+        avatar:
+          src: https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/benjamincanac
+      author: Miembro de Península
+    - quote:
+        Los coaches cuidan la técnica y se adapta todo al nivel de cada persona.
+        Me siento más fuerte y con energía.
+      user:
+        name: Nairobi Espinoza Alba
+        description: Miembro desde hace 2 meses
+        target: _blank
+        avatar:
+          src: https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/benjamincanac
+cta:
+  title: ¿Listo para entrenar en Península Cross?
+  description: Escríbenos por Instagram para tu clase de prueba.
+  links:
+    - label: Enviar DM
+      to: https://www.instagram.com/peninsulacross_/
+      target: _blank
+      trailingIcon: i-lucide-arrow-right
+    - label: Cómo llegar
+      to: https://www.google.com/maps/search/?api=1&query=Av.+Polit%C3%A9cnico%2C+esquina+con+Calle+105+510%2C+C.+105+Supermanzana+510%2C+Jacinto+Pat%2C+77534+Canc%C3%BAn%2C+Q.R.
+      target: _blank
+      variant: subtle
+      icon: i-lucide-map-pin
+contact:
+  address:
+    Av. Politécnico, esquina con Calle 105 510, C. 105 Supermanzana 510, Jacinto
+    Pat, 77534 Cancún, Q.R.
+  city: Cancún, Quintana Roo, México
+  google_maps_url: https://www.google.com/maps/search/?api=1&query=Av.+Polit%C3%A9cnico%2C+esquina+con+Calle+105+510%2C+C.+105+Supermanzana+510%2C+Jacinto+Pat%2C+77534+Canc%C3%BAn%2C+Q.R.
+  instagram: https://www.instagram.com/peninsulacross_/
+  facebook: https://www.facebook.com/61577717461810
+  slogan: Súmate a Península y entrena con quienes nunca te dejan rendirte.
+  schedule_note: Consulta horarios y avisos en Instagram.
+  updated_at: "2025-09-09T06:15:35.950287Z"
+theme:
+  colors:
+    primary: "#b7550b"
+    accent: "#010101"
+    dark: "#040202"
+    light: "#ffffff"
+    text: "#111111"
+    palette:
+      - "#010101"
+      - "#060304"
+      - "#040202"
+      - "#3c3836"
+      - "#000000"
+      - "#2e000a"
+      - "#b7550b"
+      - "#ffffff"
+hours:
+  note:
+    Confirma días específicos en Instagram. Actualmente se muestran bloques por
+    turnos.
+  matutino:
+    - 05:00-06:00
+    - 06:00-07:00
+    - 07:00-08:00
+    - 08:00-09:00
+  vespertino:
+    - 18:00-19:00
+    - 19:00-20:00
+    - 20:00-21:00
+nav:
+  - label: Inicio
+    to: "#top"
+  - label: Clases
+    to: "#section"
+  - label: Características
+    to: "#features"
+  - label: Membresías
+    to: "#pricing"
+  - label: Testimonios
+    to: "#testimonials"
+  - label: Contacto
+    to: "#cta"
