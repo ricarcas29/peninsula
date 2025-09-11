@@ -32,7 +32,6 @@ useSeoMeta({
     </div>
 
     <UPageHero
-      data-aos="fade-up"
       :description="page.description"
       :links="page.hero.links"
       :ui="{

@@ -55,7 +55,7 @@ hero:
       size: xl
       color: primary
     - label: Cómo llegar
-      icon: i-lucide-map-pin
+      icon: i-simple-icons-googlemaps
       to: https://maps.app.goo.gl/hdiMCZ5GH6JLZ4eC8
       target: _blank
       variant: soft
@@ -87,24 +87,34 @@ features:
   features:
     - title: Clases para principiantes
       description: Escala cada movimiento. Empezar es fácil y seguro.
-      icon: i-lucide-sparkles
+      icon: i-simple-icons-sparkpost
       ui:
         leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
     - title: WODs variados
       description: Fuerza, técnica y acondicionamiento para que nunca sea monótono.
-      icon: i-lucide-dumbbell
+      icon: i-mdi-dumbbell
+      ui:
+        leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
     - title: Acompañamiento técnico
       description: Corrección de postura y progresiones en levantamientos y gimnásticos.
-      icon: i-lucide-activity
+      icon: i-simple-icons-activitypub
+      ui:
+        leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
     - title: Ambiente seguro
       description: Espacio cuidado, respeto por los tiempos y niveles de cada persona.
-      icon: i-lucide-shield-check
+      icon: i-simple-icons-checkmarx
+      ui:
+        leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
     - title: Comunidad
       description: Entrena con personas que te motivan y celebran tus logros.
-      icon: i-lucide-users-round
+      icon: i-mdi-account-group
+      ui:
+        leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed 
     - title: Merch y eventos
       description: Playeras y actividades para la comunidad (consulta en Instagram).
-      icon: i-lucide-shirt
+      icon: i-mdi-tshirt-crew
+      ui:
+        leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
 steps:
   title: ¿Cómo empezar?
   description: Da tus primeros pasos en Península Cross.
@@ -130,10 +140,10 @@ steps:
   #     icon: i-simple-icons-instagram
   #   - title: 2) Elige tu horario
   #     description: Consulta horarios y actualizaciones en historias destacadas.
-  #     icon: i-lucide-calendar-clock
+  #     icon: i-simple-icons-googlecalendar
   #   - title: 3) Llega 10 minutos antes
   #     description: Te recibimos, evaluamos tu nivel y te acompañamos en tu primer WOD.
-  #     icon: i-lucide-badge-check
+  #     icon: i-simple-icons-checkmarx
 pricing:
   title: Membresías
   description: Elige tu plan. Escríbenos por Instagram si tienes dudas.
@@ -200,12 +210,12 @@ cta:
     - label: Enviar DM
       to: https://www.instagram.com/peninsulacross_/
       target: _blank
-      trailingIcon: i-lucide-arrow-right
+      trailingIcon: i-mdi-arrow-right-thick
     - label: Cómo llegar
       to: https://www.google.com/maps/search/?api=1&query=Av.+Polit%C3%A9cnico%2C+esquina+con+Calle+105+510%2C+C.+105+Supermanzana+510%2C+Jacinto+Pat%2C+77534+Canc%C3%BAn%2C+Q.R.
       target: _blank
       variant: subtle
-      icon: i-lucide-map-pin
+      icon: i-simple-icons-googlemaps
 contact:
   address:
     Av. Politécnico, esquina con Calle 105 510, C. 105 Supermanzana 510, Jacinto

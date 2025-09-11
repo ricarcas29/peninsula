@@ -1,7 +1,10 @@
 # Multi-stage build for Nuxt 4 (Nitro server)
 FROM node:20-bookworm-slim AS builder
 
-ENV NODE_ENV=development
+# Increase Node heap to avoid OOM "Killed" during build
+ENV NODE_ENV=production \
+    NODE_OPTIONS=--max-old-space-size=2048 \
+    NUXT_TELEMETRY_DISABLED=1
 WORKDIR /app
 
 # Enable pnpm via corepack to match repo version
@@ -23,9 +26,11 @@ RUN pnpm prune --prod
 FROM node:20-bookworm-slim AS runner
 
 ENV NODE_ENV=production \
+    NODE_OPTIONS=--max-old-space-size=1024 \
     PORT=3000 \
     HOST=0.0.0.0 \
-    NITRO_PORT=3000
+    NITRO_PORT=3000 \
+    NUXT_TELEMETRY_DISABLED=1
 
 WORKDIR /app
 
