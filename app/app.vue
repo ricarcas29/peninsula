@@ -33,5 +33,4 @@ useSeoMeta({
 
     <AppFooter />
   </UApp>
-  
 </template>

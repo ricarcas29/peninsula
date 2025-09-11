@@ -29,11 +29,13 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
   <UHeader>
     <template #left>
       <NuxtLink to="/">
-      <NuxtImg src="/logo.jpg" 
-      alt="Peninsula Logo" 
-      class="w-auto h-auto shrink-0" 
-      width="300" 
-      height="100" />
+        <NuxtImg
+          src="/logo.jpg"
+          alt="Peninsula Logo"
+          class="w-auto h-auto shrink-0"
+          width="300"
+          height="100"
+        />
       </NuxtLink>
 
       <!-- <TemplateMenu /> -->

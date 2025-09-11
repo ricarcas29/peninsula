@@ -1,25 +1,28 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData("index", () =>
-  queryCollection("content").first(),
-);
+const { data: page } = await useAsyncData('index', () =>
+  queryCollection('content').first()
+)
 if (!page.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: "Page not found",
-    fatal: true,
-  });
+    statusMessage: 'Page not found',
+    fatal: true
+  })
 }
 
 useSeoMeta({
   title: page.value.seo?.title || page.value.title,
   ogTitle: page.value.seo?.title || page.value.title,
   description: page.value.seo?.description || page.value.description,
-  ogDescription: page.value.seo?.description || page.value.description,
-});
+  ogDescription: page.value.seo?.description || page.value.description
+})
 </script>
 
 <template>
-  <div v-if="page" class="relative">
+  <div
+    v-if="page"
+    class="relative"
+  >
     <div class="hidden lg:block">
       <UColorModeImage
         light="/images/light/line-1.svg"
@@ -34,7 +37,7 @@ useSeoMeta({
       :links="page.hero.links"
       :ui="{
         container: 'md:pt-18 lg:pt-20',
-        title: 'max-w-3xl mx-auto',
+        title: 'max-w-3xl mx-auto'
       }"
     >
       <template #top>
@@ -42,7 +45,10 @@ useSeoMeta({
       </template>
 
       <template #title>
-        <MDC :value="page.title" unwrap="p" />
+        <MDC
+          :value="page.title"
+          unwrap="p"
+        />
       </template>
       <LazyStarsBg />
     </UPageHero>
@@ -54,7 +60,7 @@ useSeoMeta({
       orientation="horizontal"
       :ui="{
         container: 'lg:px-0 2xl:px-20 mx-0 max-w-none md:mr-10',
-        features: 'gap-0',
+        features: 'gap-0'
       }"
       reverse
     >
@@ -69,24 +75,24 @@ useSeoMeta({
         :src="page.section.images.desktop"
         :alt="page.section.title"
         class="hidden lg:block 2xl:hidden left-0 w-full max-w-2xl"
-      />
+      >
       <img
         :src="page.section.images.mobile"
         :alt="page.section.title"
         class="block lg:hidden 2xl:block 2xl:w-full 2xl:max-w-2xl"
-      />
+      >
     </UPageSection>
 
     <USeparator :ui="{ border: 'border-primary/30' }" />
 
     <UPageSection
-      data-aos="fade-up"
       id="features"
+      data-aos="fade-up"
       :description="page.features.description"
       :features="page.features.features"
       :ui="{
         title: 'text-left @container relative flex',
-        description: 'text-left',
+        description: 'text-left'
       }"
       class="relative overflow-hidden"
     >
@@ -116,8 +122,8 @@ useSeoMeta({
     <USeparator :ui="{ border: 'border-primary/30' }" />
 
     <UPageSection
-      data-aos="fade-up"
       id="steps"
+      data-aos="fade-up"
       :description="page.steps.description"
       class="relative overflow-hidden"
     >
@@ -129,14 +135,17 @@ useSeoMeta({
         />
       </template>
       <template #title>
-        <MDC data-aos="fade-up" :value="page.steps.title" />
+        <MDC
+          data-aos="fade-up"
+          :value="page.steps.title"
+        />
       </template>
 
       <template #features>
         <UPageCard
-          data-aos="fade-up"
           v-for="(step, index) in page.steps.items"
           :key="index"
+          data-aos="fade-up"
           class="group"
           :ui="{ container: 'p-4 sm:p-4', title: 'flex items-center gap-1' }"
         >
@@ -161,8 +170,8 @@ useSeoMeta({
     </UPageSection>
 
     <UPageSection
-      data-aos="fade-up"
       id="pricing"
+      data-aos="fade-up"
       class="mb-24 overflow-hidden"
       :title="page.pricing.title"
       :description="page.pricing.description"
@@ -181,7 +190,10 @@ useSeoMeta({
         </div>
       </template>
 
-      <UPricingPlans data-aos="fade-up" scale>
+      <UPricingPlans
+        data-aos="fade-up"
+        scale
+      >
         <UPricingPlan
           v-for="(plan, index) in page.pricing.plans"
           :key="index"
@@ -200,8 +212,8 @@ useSeoMeta({
     </UPageSection>
 
     <UPageSection
-      data-aos="fade-up"
       id="testimonials"
+      data-aos="fade-up"
       :title="page.testimonials.title"
       :description="page.testimonials.description"
       :items="page.testimonials.items"
@@ -226,11 +238,14 @@ useSeoMeta({
             :description="testimonial.quote"
             :ui="{
               description:
-                'before:content-[open-quote] after:content-[close-quote]',
+                'before:content-[open-quote] after:content-[close-quote]'
             }"
           >
             <template #footer>
-              <UUser v-bind="testimonial.user" size="xl" />
+              <UUser
+                v-bind="testimonial.user"
+                size="xl"
+              />
             </template>
           </UPageCard>
         </UPageColumns>
