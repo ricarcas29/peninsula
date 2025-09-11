@@ -1,44 +1,27 @@
-# Multi-stage build for Nuxt 4 (Nitro server)
-FROM node:20-bookworm-slim AS builder
+# syntax=docker/dockerfile:1
 
-# Increase Node heap to avoid OOM "Killed" during build
-ENV NODE_ENV=production \
-    NODE_OPTIONS=--max-old-space-size=2048 \
-    NUXT_TELEMETRY_DISABLED=1
+FROM node:20-bookworm-slim AS runtime
 WORKDIR /app
 
-# Enable pnpm via corepack to match repo version
-RUN corepack enable && corepack prepare pnpm@10.15.1 --activate
-
-# Install deps first (better cache)
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml* ./
-# Nota: no usamos --frozen-lockfile para permitir instalar nuevas devDeps
-# sin tener que actualizar el lockfile en el repo (p. ej., tailwindcss).
-RUN pnpm install
-
-# Copy source and build
-COPY . .
-RUN pnpm build
-
-# Prune to production deps for runtime stage (keeps native binaries built)
-RUN pnpm prune --prod
-
-FROM node:20-bookworm-slim AS runner
-
 ENV NODE_ENV=production \
-    NODE_OPTIONS=--max-old-space-size=1024 \
-    PORT=3000 \
-    HOST=0.0.0.0 \
     NITRO_PORT=3000 \
-    NUXT_TELEMETRY_DISABLED=1
+    NITRO_HOST=0.0.0.0
 
-WORKDIR /app
+# Copiamos SOLO la build ya compilada
+COPY .output ./.output
 
-# Copy Nitro output and production node_modules
-COPY --from=builder /app/.output ./.output
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
+# Instalar dependencias de RUNTIME si las hubiera:
+# (Nitro escribe .output/server/package.json cuando quedan deps externas)
+RUN set -eux; \
+    if [ -f ".output/server/package.json" ]; then \
+      cd .output/server && \
+      npm i --omit=dev --no-audit --no-fund --prefer-offline; \
+    fi
+
+# Salud simple usando fetch de Node 20 (sin instalar curl)
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s \
+  CMD node -e "fetch('http://127.0.0.1:'+ (process.env.PORT||process.env.NITRO_PORT||3000)).then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
 
 EXPOSE 3000
-
+USER node
 CMD ["node", ".output/server/index.mjs"]
