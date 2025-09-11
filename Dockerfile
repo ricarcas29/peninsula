@@ -9,7 +9,9 @@ RUN corepack enable && corepack prepare pnpm@10.15.1 --activate
 
 # Install deps first (better cache)
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml* ./
-RUN pnpm install --frozen-lockfile
+# Nota: no usamos --frozen-lockfile para permitir instalar nuevas devDeps
+# sin tener que actualizar el lockfile en el repo (p. ej., tailwindcss).
+RUN pnpm install
 
 # Copy source and build
 COPY . .
@@ -35,4 +37,3 @@ COPY --from=builder /app/package.json ./package.json
 EXPOSE 3000
 
 CMD ["node", ".output/server/index.mjs"]
-
