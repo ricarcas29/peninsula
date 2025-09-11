@@ -19,14 +19,13 @@ const SITE_OG_IMAGE = (() => {
 
 export default defineNuxtConfig({
   modules: [
-    process.env.NODE_ENV !== "production" && "@nuxt/eslint",
     "@nuxt/image",
     "@nuxt/ui",
     "@nuxt/content",
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
     "nuxt-aos",
-  ].filter(Boolean) as string[],
+  ],
 
   ssr: true,
 
@@ -87,28 +86,7 @@ export default defineNuxtConfig({
       link: [
         { rel: "canonical", href: SITE_URL },
         { rel: "icon", href: "/logo.ico" },
-      ],
-      script: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: SITE_BRAND,
-            url: SITE_URL,
-            logo: SITE_OG_IMAGE,
-          }),
-        },
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: SITE_NAME,
-            url: SITE_URL,
-          }),
-        },
-      ],
+      ]
     },
   },
 
