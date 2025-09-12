@@ -1,30 +1,28 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('index', () =>
-  queryCollection('content').first()
-)
+const { data: page } = await useAsyncData("index", () =>
+  queryCollection("content").first(),
+);
 if (!page.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Page not found',
-    fatal: true
-  })
+    statusMessage: "Page not found",
+    fatal: true,
+  });
 }
 
 useSeoMeta({
   title: page.value.seo?.title || page.value.title,
   ogTitle: page.value.seo?.title || page.value.title,
   description: page.value.seo?.description || page.value.description,
-  ogDescription: page.value.seo?.description || page.value.description
-})
+  ogDescription: page.value.seo?.description || page.value.description,
+});
 </script>
 
 <template>
-  <div
-    v-if="page"
-    class="relative"
-  >
+  <div v-if="page" class="relative">
     <div class="hidden lg:block">
       <UColorModeImage
+        alt="background line 1"
         light="/images/light/line-1.svg"
         dark="/images/dark/line-1.svg"
         class="absolute pointer-events-none pb-10 left-0 top-0 object-cover h-[650px]"
@@ -36,7 +34,7 @@ useSeoMeta({
       :links="page.hero.links"
       :ui="{
         container: 'md:pt-18 lg:pt-20',
-        title: 'max-w-3xl mx-auto'
+        title: 'max-w-3xl mx-auto',
       }"
     >
       <template #top>
@@ -44,10 +42,7 @@ useSeoMeta({
       </template>
 
       <template #title>
-        <MDC
-          :value="page.title"
-          unwrap="p"
-        />
+        <MDC :value="page.title" unwrap="p" />
       </template>
       <LazyStarsBg />
     </UPageHero>
@@ -59,7 +54,7 @@ useSeoMeta({
       orientation="horizontal"
       :ui="{
         container: 'lg:px-0 2xl:px-20 mx-0 max-w-none md:mr-10',
-        features: 'gap-0'
+        features: 'gap-0',
       }"
       reverse
     >
@@ -74,12 +69,12 @@ useSeoMeta({
         :src="page.section.images.desktop"
         :alt="page.section.title"
         class="hidden lg:block 2xl:hidden left-0 w-full max-w-2xl"
-      >
+      />
       <img
         :src="page.section.images.mobile"
         :alt="page.section.title"
         class="block lg:hidden 2xl:block 2xl:w-full 2xl:max-w-2xl"
-      >
+      />
     </UPageSection>
 
     <USeparator :ui="{ border: 'border-primary/30' }" />
@@ -91,7 +86,7 @@ useSeoMeta({
       :features="page.features.features"
       :ui="{
         title: 'text-left @container relative flex',
-        description: 'text-left'
+        description: 'text-left',
       }"
       class="relative overflow-hidden"
     >
@@ -109,6 +104,7 @@ useSeoMeta({
         />
         <div class="hidden @min-[1020px]:block">
           <UColorModeImage
+            alt="background line 1"
             data-aos="fade-up"
             light="/images/light/line-2.svg"
             dark="/images/dark/line-2.svg"
@@ -128,16 +124,14 @@ useSeoMeta({
     >
       <template #headline>
         <UColorModeImage
+          alt="background line"
           light="/images/light/line-3.svg"
           dark="/images/dark/line-3.svg"
           class="absolute -top-10 sm:top-0 right-1/2 h-24"
         />
       </template>
       <template #title>
-        <MDC
-          data-aos="fade-up"
-          :value="page.steps.title"
-        />
+        <MDC data-aos="fade-up" :value="page.steps.title" />
       </template>
 
       <template #features>
@@ -189,10 +183,7 @@ useSeoMeta({
         </div>
       </template>
 
-      <UPricingPlans
-        data-aos="fade-up"
-        scale
-      >
+      <UPricingPlans data-aos="fade-up" scale>
         <UPricingPlan
           v-for="(plan, index) in page.pricing.plans"
           :key="index"
@@ -219,6 +210,7 @@ useSeoMeta({
     >
       <template #headline>
         <UColorModeImage
+          alt="background line 5"
           light="/images/light/line-5.svg"
           dark="/images/dark/line-5.svg"
           class="absolute -top-10 sm:top-0 right-1/2 h-24"
@@ -237,14 +229,11 @@ useSeoMeta({
             :description="testimonial.quote"
             :ui="{
               description:
-                'before:content-[open-quote] after:content-[close-quote]'
+                'before:content-[open-quote] after:content-[close-quote]',
             }"
           >
             <template #footer>
-              <UUser
-                v-bind="testimonial.user"
-                size="xl"
-              />
+              <UUser v-bind="testimonial.user" size="xl" />
             </template>
           </UPageCard>
         </UPageColumns>
@@ -264,11 +253,13 @@ useSeoMeta({
 
         <div class="@max-[1280px]:hidden">
           <UColorModeImage
+            alt="background line 6"
             light="/images/light/line-6.svg"
             dark="/images/dark/line-6.svg"
             class="absolute left-10 -top-10 sm:top-0 h-full"
           />
           <UColorModeImage
+            alt="background line 7"
             light="/images/light/line-7.svg"
             dark="/images/dark/line-7.svg"
             class="absolute right-0 bottom-0 h-full"
