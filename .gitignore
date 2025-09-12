@@ -5,7 +5,9 @@
 .nitro
 .cache
 dist
-
+dist-peninsula.tar
+deploy-tmp/*
+deploy.ps1
 # Node dependencies
 node_modules
 

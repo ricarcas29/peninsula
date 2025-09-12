@@ -1,5 +1,11 @@
-**                         # ignora todo
-!.output/**                # excepto la salida compilada
-!Dockerfile.runtime        # y estos archivos de despliegue
+# Ignora todo por defecto
+**
+
+# Permite la salida compilada
+!.output
+!.output/**
+
+# Permite archivos de despliegue
+!Dockerfile.runtime
 !captain-definition
 !.dockerignore
