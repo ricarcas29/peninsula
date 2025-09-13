@@ -221,7 +221,13 @@ useSeoMeta({
       </template>
 
       <UContainer data-aos="fade-up">
-        <UPageColumns class="xl:columns-3">
+        <div
+          class="taggbox text-primary"
+          style="width: 100%; height: 100%; overflow: auto"
+          data-widget-id="300304"
+          data-website="1"
+        ></div>
+        <!-- <UPageColumns class="xl:columns-3">
           <UPageCard
             v-for="(testimonial, index) in page.testimonials.items"
             :key="index"
@@ -236,7 +242,7 @@ useSeoMeta({
               <UUser v-bind="testimonial.user" size="xl" />
             </template>
           </UPageCard>
-        </UPageColumns>
+        </UPageColumns> -->
       </UContainer>
     </UPageSection>
 

@@ -49,6 +49,7 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       />
 
       <UButton
+      to="https://instagram.com/peninsulacross_"
         label="¡Quiero entrenar!"
         variant="subtle"
         class="hidden lg:block"
@@ -64,6 +65,7 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
         class="-mx-2.5"
       />
       <UButton
+        to="https://instagram.com/peninsulacross_"
         class="mt-4"
         label="¡Quiero entrenar!"
         variant="subtle"

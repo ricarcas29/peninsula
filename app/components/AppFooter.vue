@@ -1,59 +1,62 @@
 <script setup lang="ts">
-const columns = [{
-  label: 'Resources',
-  children: [{
-    label: 'Help center'
-  }, {
-    label: 'Docs'
-  }, {
-    label: 'Roadmap'
-  }, {
-    label: 'Changelog'
-  }]
-}, {
-  label: 'Features',
-  children: [{
-    label: 'Affiliates'
-  }, {
-    label: 'Portal'
-  }, {
-    label: 'Jobs'
-  }, {
-    label: 'Sponsors'
-  }]
-}, {
-  label: 'Company',
-  children: [{
-    label: 'About'
-  }, {
-    label: 'Pricing'
-  }, {
-    label: 'Careers'
-  }, {
-    label: 'Blog'
-  }]
-}]
+const columns = [
+  // {
+  //   label: "Legal",
+  //   children: [
+  //     {
+  //       label: "Términos y Condiciones",
+  //       to: "/legal/#terminos-y-condiciones",
+  //     },
+  //     {
+  //       label: "Política de Privacidad",
+  //       to: "/legal/#politica-de-privacidad",
+  //     },
+  //     {
+  //       label: "Aviso Legal",
+  //       to: "/legal/#aviso-legal",
+  //     },
+  //     {
+  //       label: "Política de Cookies",
+  //       to: "/legal/#politica-de-cookies",
+  //     },
+  //   ],
+  // },
+  {
+    label: "Peninsula",
+    children: [
+      {
+        label: "Propuesta",
+        to: "#features",
+      },
+      {
+        label: "Precios",
+        to: "#pricing",
+      },
+      {
+        label: "Testimonios",
+        to: "#testimonials",
+      },
+    ],
+  },
+];
 
-const toast = useToast()
+const toast = useToast();
 
-const email = ref('')
-const loading = ref(false)
+const email = ref("");
+const loading = ref(false);
 
 function onSubmit() {
-  loading.value = true
+  loading.value = true;
 
   toast.add({
-    title: 'Suscrito!',
-    description: 'Te suscribiste correctamente!'
-  })
+    title: "Suscrito!",
+    description: "Te suscribiste correctamente!",
+  });
 }
 </script>
 
 <template>
-  <USeparator
-    icon="i-simple-icons-nuxtdotjs"
-    class="h-px"
-  />
+  <USeparator icon="i-mdi-dumbbell" class="h-px" />
 
   <UFooter :ui="{ top: 'border-b border-default' }">
     <template #top>
@@ -73,11 +76,7 @@ function onSubmit() {
                   placeholder="Ingresa tu correo"
                 >
                   <template #trailing>
-                    <UButton
-                      type="submit"
-                      size="xs"
-                      label="Quiero mi promo"
-                    />
+                    <UButton type="submit" size="xs" label="Quiero mi promo" />
                   </template>
                 </UInput>
               </UFormField>
@@ -95,26 +94,26 @@ function onSubmit() {
 
     <template #right>
       <UButton
-        to="https://go.nuxt.com/discord"
+        to=""
         target="_blank"
-        icon="i-simple-icons-discord"
-        aria-label="Nuxt on Discord"
+        icon="i-simple-icons-whatsapp"
+        aria-label="Whatsapp"
         color="neutral"
         variant="ghost"
       />
       <UButton
-        to="https://go.nuxt.com/x"
+        to="https://www.instagram.com/peninsulacross_/"
         target="_blank"
-        icon="i-simple-icons-x"
-        aria-label="Nuxt on X"
+        icon="i-simple-icons-instagram"
+        aria-label="Instagram crosfitero"
         color="neutral"
         variant="ghost"
       />
       <UButton
-        to="https://github.com/nuxt-ui-templates/landing"
+        to="https://www.facebook.com/61577717461810"
         target="_blank"
-        icon="i-simple-icons-github"
-        aria-label="Nuxt UI on GitHub"
+        icon="i-simple-icons-facebook"
+        aria-label="Nuestro Facebook"
         color="neutral"
         variant="ghost"
       />

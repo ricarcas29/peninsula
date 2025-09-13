@@ -2,10 +2,8 @@
 
 // SEO defaults (overridable via env in CapRover)
 const SITE_URL = process.env.NUXT_PUBLIC_SITE_URL || "http://localhost:3000";
-const SITE_NAME =
-  process.env.NUXT_PUBLIC_SITE_NAME || "Península Cross Cancún";
-const SITE_BRAND =
-  process.env.NUXT_PUBLIC_SITE_BRAND || "Península Cross";
+const SITE_NAME = process.env.NUXT_PUBLIC_SITE_NAME || "Península Cross Cancún";
+const SITE_BRAND = process.env.NUXT_PUBLIC_SITE_BRAND || "Península Cross";
 const SITE_DESCRIPTION_META =
   process.env.NUXT_PUBLIC_SITE_DESCRIPTION_META ||
   "Clases guiadas, comunidad y WODs variados. Horarios matutinos y vespertinos. Escribe por Instagram para tu clase de prueba.";
@@ -29,6 +27,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
     "nuxt-aos",
+    "nuxt-vitalizer",
   ],
 
   ssr: true,
@@ -74,12 +73,24 @@ export default defineNuxtConfig({
         { property: "og:image", content: SITE_OG_IMAGE },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: `${SITE_NAME} | CrossFit en Cancún` },
-        { name: "twitter:description", content: "Clases guiadas, comunidad y WODs variados." },
+        {
+          name: "twitter:description",
+          content: "Clases guiadas, comunidad y WODs variados.",
+        },
         { name: "twitter:image", content: SITE_OG_IMAGE },
       ],
       link: [
         { rel: "canonical", href: SITE_URL },
         { rel: "icon", href: "/logo.ico" },
+      ],
+      script: [
+        {
+          src: "https://widget.taggbox.com/embed.min.js",
+          // In Nuxt 4 / Unhead, use tagPosition instead of deprecated `body`
+          tagPosition: "bodyClose",
+          async: true,
+          defer: true,
+        },
       ],
     },
   },
@@ -187,4 +198,3 @@ export default defineNuxtConfig({
     sitemap: `${SITE_URL.replace(/\/$/, "")}/sitemap.xml`,
   },
 });
-

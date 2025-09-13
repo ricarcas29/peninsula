@@ -192,17 +192,17 @@ testimonials:
         description: Miembro desde hace 1 año
         target: _blank
         avatar:
-          src: https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/benjamincanac
+          src: /images/testimonios/ken.png
       author: Miembro de Península
     - quote:
         Los coaches cuidan la técnica y se adapta todo al nivel de cada persona.
         Me siento más fuerte y con energía.
       user:
-        name: Nairobi Espinoza Alba
-        description: Miembro desde hace 2 meses
+        name: Brenda Ducret
+        description: Miembro desde hace 11 meses
         target: _blank
         avatar:
-          src: https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/benjamincanac
+          src: /images/testimonios/brenda.png
 cta:
   title: ¿Listo para entrenar en Península Cross?
   description: Escríbenos por Instagram para tu clase de prueba.
